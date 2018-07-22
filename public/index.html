@@ -10,17 +10,23 @@
 </head>
 
 <body>
-  
     <!-- <div class="alert alert-primary" role="alert">
+        <span class="badge badge-pill badge-primary">ใหม่!</span>
         ยินดีต้อนรับ เชิญเล่นแต่งเพลงมั่วได้เลย!
-    </div> -->
+    </div>  -->
+
+    <div class="jumbotron">
+        <h1 class="display-4">KVIS Random Writer</h1>
+        <hr class="my-4">
+        <p>ยินดีต้อนรับครับ มาลองให้โปรแกรมแต่งเพลงกันเถอะ</p>
+      </div>
 
     <div class="card input-card">
+        <h5 class="card-header">ใส่ข้อมูลในการ์ดนี้ได้เลย</h5>
         <div class="card-body">
-          <h5 class="card-title">ให้โปรแกรมแต่งเพลงให้กันเถอะ</h5>
           <form>
           <div class="form-group">
-              <label for="inputText">ใส่เนื้อเพลงตั้งต้นตรงนี้เลย</label>
+              <label for="inputText">เนื้อเพลง</label>
               <textarea id="inputText" class="form-control" rows="10"></textarea>
           </div>          
           <div class="form-group">
@@ -38,10 +44,9 @@
     </div>
  
   <div class="card output-card">
+      <h5 class="card-header">การ์ดนี้จะแสดงเพลงใหม่ที่แต่งเสร็จแล้ว</h5>
       <div class="card-body">
-        <h5 class="card-title">แต่งเพิ่มแล้วได้แบบนี้</h5>
         <div id="outputText">
-
         </div>
       </div>
     </div>

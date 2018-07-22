@@ -5,67 +5,70 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function submitInput()
 {
-    var inputText = document.getElementById("inputText").value.replace(/\n/g, ' ');
-    var numCharsResult = document.getElementById("numCharsResult").value;
+    var inputText = document.getElementById( "inputText" )
+        .value
+        .replace( /\n/g, ' ' );
 
-    var outputTextElement = document.getElementById("outputText");
-    
-    var gramNumber = 3;
+    var numCharsResult = document.getElementById( "numCharsResult" ).value;
 
-    var nGramDictionary = buildNGramDictionary(inputText, gramNumber);
+    var outputTextElement = document.getElementById( "outputText" );
     
-    var seed = inputText.substr(0, gramNumber);
+    var numCharsLookBack = 10;
+
+    var nGramDictionary = buildKGramDictionary( inputText, numCharsLookBack );
+    
+    var seed = inputText.substr( 0, numCharsLookBack );
 
     var resultString = seed;
     var currentWord = seed;
 
-    for (var i = gramNumber; i < numCharsResult; i++ )
+    for (var i = 0; i < numCharsResult - numCharsLookBack; i++ )
     {
-        if ( getNextLetter(currentWord, nGramDictionary) === null ){
-            var randomIndex = Math.floor(Math.random() * ( inputText.length - gramNumber ) );
-            currentWord = inputText.substr(randomIndex, gramNumber)
+        if ( getNextLetter( currentWord, nGramDictionary ) === null ){
+            var randomIndex = Math.floor( Math.random() * ( inputText.length - numCharsLookBack ) );
+            currentWord = inputText.substr( randomIndex, numCharsLookBack )
             resultString += currentWord;
-            i += gramNumber - 1;
+            i += numCharsLookBack - 1;
         }
         else
         {
-            var nextLetter = getNextLetter(currentWord, nGramDictionary);
+            var nextLetter = getNextLetter( currentWord, nGramDictionary );
             resultString += nextLetter;
-            currentWord = currentWord.substr(1) + nextLetter;
+            currentWord = currentWord.substr( 1 ) + nextLetter;
         }
     }
 
     outputTextElement.innerHTML = resultString;
 }
 
-function getNextLetter(currentWord, dictionary)
+function getNextLetter( currentWord, dictionary )
 {
     if ( !( currentWord in dictionary ) ){
         return null;
     }
 
     var possibleLetters = dictionary[currentWord];
-    var randomIndex = Math.floor(Math.random() * possibleLetters.length);
+    var randomIndex = Math.floor( Math.random() * possibleLetters.length );
     return possibleLetters[randomIndex];
 }
 
-function buildNGramDictionary(input, n) 
+function buildKGramDictionary( input, numCharsLookBack ) 
 {
-    var nGramDictionary = {};
-    for ( var i = 0; i < input.length - n; i++)
+    var kGramDictionary = {};
+    for ( var i = 0; i < input.length - numCharsLookBack; i++)
     {
         var currentSubstring = "";
-        for ( var j = 0; j < n; j++ )
+        for ( var j = 0; j < numCharsLookBack; j++ )
         {
             currentSubstring += input[i + j];
         }
 
-        if (!(currentSubstring in nGramDictionary)){
-            nGramDictionary[currentSubstring] = [];
+        if ( !( currentSubstring in kGramDictionary ) ){
+            kGramDictionary[currentSubstring] = [];
         }
             
-        nGramDictionary[currentSubstring].push(input[i+n]);
+        kGramDictionary[currentSubstring].push( input[i + numCharsLookBack] );
     }
 
-    return nGramDictionary;
+    return kGramDictionary;
 }
