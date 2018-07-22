@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Noto Sans Thai;
+    src: url(NotoSansThai-Regular.ttf);
+  }
+
+  .result {
+    font-family: Noto Sans Thai, Questrial, sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  .input-card {
+    margin-top: 10px;
+    width: 80%; 
+    left:10%
+  }
+
+  .output-card {
+    margin-top: 10px;
+    width: 80%; 
+    left:10%
+  }

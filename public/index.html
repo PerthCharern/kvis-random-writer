@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Thai Random Writer</title>
+  <link href="main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+  <script src="main.js"></script>
+</head>
+
+<body>
+  
+    <!-- <div class="alert alert-primary" role="alert">
+        ยินดีต้อนรับ เชิญเล่นแต่งเพลงมั่วได้เลย!
+    </div> -->
+
+    <div class="card input-card">
+        <div class="card-body">
+          <h5 class="card-title">ให้โปรแกรมแต่งเพลงให้กันเถอะ</h5>
+          <form>
+          <div class="form-group">
+              <label for="inputText">ใส่เนื้อเพลงตั้งต้นตรงนี้เลย</label>
+              <textarea id="inputText" class="form-control" rows="10"></textarea>
+          </div>          
+          <div class="form-group">
+              <label for="numCharsResult">จะให้แต่งเพลงใหม่กี่ตัวอักษร</label>
+              <input id="numCharsResult" type="text"></input>
+          </div>
+          <input 
+            type="button" 
+            class="btn btn-success"
+            id="submitInputButton" 
+            value="เริ่มแต่งเลย" />
+  
+          </form>
+        </div>
+    </div>
+ 
+  <div class="card output-card">
+      <div class="card-body">
+        <h5 class="card-title">แต่งเพิ่มแล้วได้แบบนี้</h5>
+        <div id="outputText">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
