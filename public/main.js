@@ -3,12 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     button.onclick = submitInput;
 }, false);
 
-
 function submitInput()
 {
     var inputText = document.getElementById("inputText").value.replace(/\n/g, ' ');
     var numCharsResult = document.getElementById("numCharsResult").value;
-
 
     var outputTextElement = document.getElementById("outputText");
     
@@ -38,7 +36,6 @@ function submitInput()
     }
 
     outputTextElement.innerHTML = resultString;
-    console.log(nGramDictionary);
 }
 
 function getNextLetter(currentWord, dictionary)
@@ -63,15 +60,11 @@ function buildNGramDictionary(input, n)
             currentSubstring += input[i + j];
         }
 
-        // console.log(currentSubstring);
-
         if (!(currentSubstring in nGramDictionary)){
             nGramDictionary[currentSubstring] = [];
         }
             
         nGramDictionary[currentSubstring].push(input[i+n]);
-
-        // console.log(nGramDictionary);
     }
 
     return nGramDictionary;
