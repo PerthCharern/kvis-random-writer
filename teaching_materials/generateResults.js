@@ -10,7 +10,7 @@ var currentWord = seed;
 for ( var i = 0; i < numCharsResult - numCharsLookBack; i++ )
 {
     var nextLetter = getNextLetter( currentWord, nGramDictionary );
-    resultString += ............. ; // What should go here?
+    resultString = resultString + ............. ; // What should go here?
 
     // Note that the substr( 1 ) returns a substring WITHOUT the first character.
     // For example, if currentWord is "bcde", currentWord.substr( 1 ) will be just "cde".
