@@ -13,7 +13,7 @@ function submitInput()
 
     var outputTextElement = document.getElementById( "outputText" );
     
-    var numCharsLookBack = 10;
+    var numCharsLookBack = 3;
 
     var nGramDictionary = buildKGramDictionary( inputText, numCharsLookBack );
     
