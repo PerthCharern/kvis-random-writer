@@ -1,4 +1,4 @@
-// Code #1
+// Build K-Gram Dictionary Version #1
 // Please run this code with
 // input = "abcabd"
 // numCharsLookBack = 2
