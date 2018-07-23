@@ -20,7 +20,7 @@ function buildKGramDictionary( input, numCharsLookBack )
            kGramDictionary[currentSubstring] = []; // [] means an empty array
        }
           
-       kGramDictionary[currentSubstring].push( input[i + numCharsLookBack] ); 
+       kGramDictionary[currentSubstring].push( input[i + numCharsLookBack] ); // .push means adding an element to an array
    }
 
    return kGramDictionary;
