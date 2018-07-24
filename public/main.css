@@ -9,5 +9,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 80%; 
-    left:10%
+    left:10%;
+  }
+  
+  .card-body-text {
+    white-space: pre-wrap;
   }

@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function submitInput()
 {
     var inputText = document.getElementById( "inputText" )
-        .value
-        .replace( /\n/g, ' ' );
+        .value;
 
     var numCharsResult = document.getElementById( "numCharsResult" ).value;
 
